@@ -98,4 +98,12 @@ export class CardataService {
       })
     );
   }
+  getAllCars(): Observable<Car[]> {
+    return this.http.get<Car[]>(this.apiUrl).pipe(
+      catchError(error => {
+        console.error('Error fetching cars from backend:', error);
+        return of([]); 
+      })
+    );
+  }
 }

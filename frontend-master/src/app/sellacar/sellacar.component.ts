@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardataService } from '../cardata.service';
+import { Car, CardataService } from '../cardata.service';
 import { FormsModule } from '@angular/forms';  // <-- Import FormsModule
 
 @Component({
@@ -10,30 +10,7 @@ import { FormsModule } from '@angular/forms';  // <-- Import FormsModule
   styleUrls: ['./sellacar.component.css']  // <-- Use styleUrls instead of styleUrl
 })
 export class SellacarComponent {
-  car = {id: 0,
-    registrationNumber: '',
-    ownerName: '',
-    carMake: '',
-    carModel: '',
-    variant: '',
-    year: 0,
-    price: 0,
-    imageUrl: [],
-    description: '',
-    mileage: 0,
-    fuelType: '',
-    transmission: '',
-    bodyType: '',
-    engineCapacity: 0,
-    fuelEfficiency: 0,
-    emissions: 0,
-    availability: 'Available',
-    location: '',
-    userId: 0,
-    biddingAllowed: false,  // Default to false
-    isSold: false,
-    bookingCount: 0
-  };
+  car!:Car;
 
   constructor(private carDataService: CardataService) {}
 
